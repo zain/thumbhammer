@@ -137,6 +137,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # imagekit
 IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'imagekit.cachefiles.backends.Async'
+
+# celery
 CELERY_ACCEPT_CONTENT = ['pickle']
 
 # Activate Django-Heroku.
