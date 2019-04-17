@@ -135,5 +135,9 @@ STATICFILES_DIRS = [
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# imagekit
+IMAGEKIT_DEFAULT_CACHEFILE_BACKEND = 'imagekit.cachefiles.backends.Async'
+CELERY_ACCEPT_CONTENT = ['pickle']
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
