@@ -1,8 +1,17 @@
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
 from .models import Image
 
 
+@csrf_exempt
 def root(request):
+    if request.method == "POST":
+        Image.objects.create(
+            name=request.POST['name'],
+            original=request.FILES['file'],
+        )
+
     output = {
         "images": [{
             "name": img.name,
